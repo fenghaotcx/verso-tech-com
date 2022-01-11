@@ -79,17 +79,18 @@ const flexArr = [
     link: 'https://t.me/pavofinance'
   },
   {
-    title:'Medium',
-    icon: <img src={MediumImg}  alt=''/>,
-    acticon: <img src={MediumImgAct}  alt=''/>,
-    link: 'https://medium.com/@pavo-finance'
-  },
-  {
     title:'Discord',
     icon: <img src={DiscordImg}  alt=''/>,
     acticon: <img src={DiscordImgAct}  alt=''/>,
     link: 'https://discord.gg/cME7P6ySsM'
   },
+  {
+    title:'Medium',
+    icon: <img src={MediumImg}  alt=''/>,
+    acticon: <img src={MediumImgAct}  alt=''/>,
+    link: 'https://medium.com/@pavo-finance'
+  },
+  
 ]
 
 const SetionItem = ({title,link,icon,acticon,isMobile}) => {

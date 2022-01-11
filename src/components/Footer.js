@@ -138,7 +138,7 @@ const Footer = ({isMobile}) => {
   return (
     <Foot isMobile={isMobile}>
       <div><Logo /></div>
-      {botArr.map((v,i)=>{
+      {/* {botArr.map((v,i)=>{
         if(isMobile){
           return (
             <MuiAccordion
@@ -159,7 +159,7 @@ const Footer = ({isMobile}) => {
         }else{
           return <BottomFlex item={v} key={i} />
         }
-      })}
+      })} */}
     </Foot>
   )
 }

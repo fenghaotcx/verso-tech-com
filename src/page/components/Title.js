@@ -3,7 +3,7 @@ import {useContext} from 'react';
 import { GlobalContext } from '../../App';
 import DehazeIcon from '@mui/icons-material/Dehaze';
 import Logo from '../../components/Logo';
-import LaunchAppBtn from '../../components/LaunchAppBtn';
+// import LaunchAppBtn from '../../components/LaunchAppBtn';
 import TopNavBar from '../../components/TopNavBar';
 
 
@@ -60,14 +60,14 @@ const Title = () => {
                 return <TopNavBar name={item} index={index} key={index}/>
               })}
             </Nav>
-            <LaunchAppBtn isMobile={isMobile} />
+            {/* <LaunchAppBtn isMobile={isMobile} /> */}
           </TopBar>
         }
         {isMobile && 
           <>
             <Logo theme={theme} isMobile={isMobile}/>
             <MRight>
-              <LaunchAppBtn isMobile={isMobile} />
+              {/* <LaunchAppBtn isMobile={isMobile} /> */}
               <DehazeIcon onClick={()=>{toggleDrawer(true)}} />
             </MRight>
           </>
