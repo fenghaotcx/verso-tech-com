@@ -36,7 +36,7 @@ const SetionFlexItem = styled.a`
   border-radius: 24px;
   width: ${({isMobile})=>isMobile?'calc((100vw - 100px) /2)':'calc((62vw - 240px) /4)'};
   ${({isMobile})=>isMobile?'margin-bottom: 20px;padding-bottom:20px;':''}
-  @media (max-width: 1520px) and (min-width:1025px){
+  @media (max-width: 1680px) and (min-width:1025px){
     width: calc((68vw - 120px) /4);
   }
   &:hover .right {
