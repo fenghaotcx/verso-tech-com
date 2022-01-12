@@ -11,13 +11,13 @@ import DiscordImgAct from '../../public/icon/DiscordImgAct.svg';
 import {useState} from 'react'
 
 const Setion = styled.div`
-  height: ${({isMobile})=>isMobile?'100%':'700px'};
+  height: ${({isMobile})=>isMobile?'100%':'576px'};
   color: ${({theme})=> theme.colors.font};
   background:  #080821;
-  padding: ${({isMobile})=>isMobile?'40px':'100px 16% 0 16%'};
+  padding: ${({isMobile})=>isMobile?'40px':'96px 16% 0 16%'};
 `
 const SetionFlex = styled.div`
-  margin-top: ${({isMobile})=>isMobile?'50px':'113px'};
+  margin-top: ${({isMobile})=>isMobile?'50px':'72px'};
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -37,8 +37,12 @@ const SetionFlexItem = styled.a`
     width: calc((68vw - 120px) /4);
   }
   &:hover .right {
-    border: 1px solid #304FFD;
-    color: #304FFD;
+    border: 1px solid #fff;
+    color: #0F1131;
+    background: #fff;
+  }
+  &:hover {
+    border: 1px solid #fff;
   }
   &>.top_img {
     display: flex;
@@ -106,7 +110,7 @@ const SetionItem = ({title,link,icon,acticon,isMobile}) => {
 const SetionThree = ({isMobile}) => {
   return (
     <Setion id="Community" isMobile={isMobile}>
-      <DivTitle tit="Community" isTit={true} line={true} bottom={15}/>
+      <DivTitle tit="Community" isTit={true}/>
       <SetionFlex isMobile={isMobile}>
         {flexArr.map((item,index)=>{
           return <SetionItem isMobile={isMobile} key={index} title={item.title} acticon={item.acticon} link={item.link} icon={item.icon}/>

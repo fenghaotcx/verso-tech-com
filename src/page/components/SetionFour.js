@@ -4,17 +4,17 @@ import WhiteGlossy from '../../public/icon/White-Glossy.svg';
 import Ellipse from '../../public/icon/Ellipse.svg';
 
 const Setion = styled.div`
-  height: ${({isMobile})=>isMobile?'100%':'1696px'};
+  height: ${({isMobile})=>isMobile?'100%':'1339px'};
   color: ${({theme})=> theme.colors.font};
   background:  #0F1131;
-  padding: ${({isMobile})=>isMobile?'40px 0px':'100px 16% 0 16%'};
+  padding: ${({isMobile})=>isMobile?'40px 0px':'96px 16% 0 16%'};
   position: relative;
   z-index: 2;
   &>.glossy {
     position: absolute;
-    width: ${({isMobile})=>isMobile?'40px':'99px'};
-    top: ${({isMobile})=>isMobile?'10px':'30px'};
-    right: ${({isMobile})=>isMobile?'10%':'34.5%'};
+    width: ${({isMobile})=>isMobile?'90px':'197px'};
+    top: 0;
+    right: ${({isMobile})=>isMobile?'10%':'20.4%'};
     z-index: 1;
   }
   &>.ellipse {
@@ -26,8 +26,8 @@ const Setion = styled.div`
   }
 `
 const SetionFlex = styled.div`
-  margin: ${({isMobile})=>isMobile?'50px':'113px'} auto 0;
-  width: ${({isMobile})=>isMobile?'100%':'80%'};
+  margin: ${({isMobile})=>isMobile?'50px':'74px'} auto 0;
+  width: ${({isMobile})=>isMobile?'100%':'100%'};
 `
 
 const SetionFlexItem = styled.div`
@@ -62,20 +62,21 @@ const Line =  styled.div`
 
 const Content = styled.div`
   position: absolute;
+  z-index: 9;
   top: 0;
-  ${({index,isMobile})=> index ?`right: ${isMobile?'40px':'62px'};text-align: right;`:`left: ${isMobile?'40px':'62px'};`}}
+  ${({index,isMobile})=> index ?`right: ${isMobile?'40px':'58px'};text-align: right;`:`left: ${isMobile?'40px':'58px'};`}}
   width: ${({isMobile})=>isMobile?'calc(100vw/2 - 30px)':'380px'};
   &>.tit {
     font-family: Poppins-Bold;
     font-weight: bold;
-    font-size: ${({isMobile})=>isMobile?'22px':'36px'};
+    font-size: ${({isMobile})=>isMobile?'18px':'24px'};
     line-height: 150%;
     color: #72E2FF;
-    margin-bottom: 8px;
+    margin-bottom: ${({isMobile})=>isMobile?'8px':'16px'};
   }
   &>.content {
     font-family: Poppins;
-    font-size: ${({isMobile})=>isMobile?'16px':'24px'};
+    font-size: ${({isMobile})=>isMobile?'13px':'18px'};
     line-height: 150%;
   }
 `
@@ -83,23 +84,23 @@ const Content = styled.div`
 const flexArr = [
   {
     title:'2022 Q1',
-    content: <p>Pavo Project 1.0 Launch Dashboard Feature Autofarm Feature<br />28-Day Lock Pool Swap<br />Token IDO<br />Add LP Pools</p>,
-    height: '420'
+    content: <p>Pavo Project 1.0 Launch<br />Dashboard Feature<br />Autofarm Feature<br />28-Day Lock Pool<br />Swap<br />Token IDO<br />Add LP Pools</p>,
+    height: '275'
   },
   {
     title:'2022 Q2',
-    content: <p>Fully Responsive to Mobile Treasury Feature<br />Support Solana Blockchain Source Code Auditing<br />Token Repurchase and Burn</p>,
-    height: '260'
+    content: <p>Fully Responsive to Mobile<br />Treasury Feature<br />Support Solana Blockchain<br />Source Code Auditing<br />Token Repurchase and Burn</p>,
+    height: '203'
   },
   {
     title:'2022 Q3',
     content: <p>List $Pavo on Exchanges<br />NFT Collaborations<br />Add in NFT Staking<br />DAO Governance<br />Integrate with More Projects</p>,
-    height: '224'
+    height: '203'
   },
   {
     title:'2022 Q4',
     content: <p>Continue to Improve Features<br />Improve DAO Governance<br />Integrate with More Chains<br />Integrate with Other Wallet DApps</p>,
-    height: '224'
+    height: '176'
   },
   {
     title:'Many more to come',
@@ -131,7 +132,7 @@ const SetionFour = ({isMobile}) => {
     <Setion id="Roadmap" isMobile={isMobile}>
       <img className='glossy' src={WhiteGlossy}  alt=''/>
       <img className='ellipse' src={Ellipse}  alt=''/>
-      <DivTitle tit="Roadmap" isTit={true} line={true} bottom={15}/>
+      <DivTitle tit="Roadmap" isTit={true} />
       <SetionFlex isMobile={isMobile}>
         {flexArr.map((item,index)=>{
           return <SetionItem isMobile={isMobile} key={index} height={item.height} index={index+1} title={item.title} content={item.content} />

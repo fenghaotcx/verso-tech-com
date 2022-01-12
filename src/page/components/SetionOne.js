@@ -5,26 +5,27 @@ import SuperToroidImg from '../../public/icon/SuperToroid.svg'
 import SetionOneImg from '../../public/icon/SetionOne.png'
 
 const Setion = styled.div`
-  height: ${({isMobile})=>isMobile?'100%':'900px'};
+  height: ${({isMobile})=>isMobile?'100%':'778px'};
   color: ${({theme})=> theme.colors.font};
   background: #080821;
-  padding: ${({isMobile})=>isMobile?'40px 20px':'140px 16% 0 16%'};
+  padding: ${({isMobile})=>isMobile?'40px 20px':'120px 16% 0 16%'};
   position: relative;
   z-index: 2;
   &>.left {
     width: ${({isMobile})=>isMobile?'100%':'673px'};
     &>.allow {
-      margin-top: 45px;
-      margin-bottom: ${({isMobile})=>isMobile?'30px':'55px'};
-      font-size: ${({isMobile})=>isMobile?'16px':'32px'};
+      margin-top: 24px;
+      margin-bottom: ${({isMobile})=>isMobile?'30px':'96px'};
+      font-size: ${({isMobile})=>isMobile?'16px':'24px'};
       line-height: 150%;
+      color: #BDBDBD;
       position: relative;
       z-index: 2;
     }
     &>.by {
       font-size: ${({isMobile})=>isMobile?'12px':'22px'};
       line-height: 150%;
-      color: rgba(255, 255, 255, 0.7);
+      color: #666666;
     }
     &>img {
       width: 193px;
@@ -36,15 +37,18 @@ const Setion = styled.div`
   &>.leftImg {
     position: absolute;
     width: ${({isMobile})=>isMobile?'50px':'80px'};
-    top: ${({isMobile})=>isMobile?'70px':'140px'};
-    ${({isMobile})=>isMobile?'right: 20px;':'left: calc(16% - 80px);'}
+    top: ${({isMobile})=>isMobile?'70px':'96px'};
+    ${({isMobile})=>isMobile?'right: 20px;':'left: calc(8.6%);'}
     z-index: 1;
   }
   &>.rightImg {
     position: absolute;
-    width: 42vw;
-    top: 24px;
-    right: 0px;
+    width: 38.43vw;
+    top: 26px;
+    right: 9.8%;
+    @media (max-width: 1520px) and (min-width:1025px){
+      right: 4%;
+    }
     z-index: 1;
   }
 `
@@ -54,7 +58,7 @@ const SetionOne = ({isMobile}) => {
     <Setion id="Home" isMobile={isMobile}> 
       <div className='left'>
         <DivTitle tit="Pavo optimizes" />
-        <DivTitle tit="your finance" line={true} bottom={20}/>
+        <DivTitle tit="your finance"/>
         <div className='allow'>
           Pavo allows you to manage all assets at your fingertips. Natively built by #Lunatics for Terra Ecosystem.
         </div>

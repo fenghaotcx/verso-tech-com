@@ -14,7 +14,7 @@ const Tit = styled.div`
   font-style: normal;
   font-weight: bold;
   font-size: ${({isMobile}) => isMobile?'22px':'40px'};
-  height: ${({isMobile}) => isMobile?'50px':'100px'};
+  height: ${({isMobile}) => isMobile?'50px':'64px'};
   color: ${({theme})=> theme.colors.font};
   ${({isMobile}) => isMobile?'padding:10px 20px;':''}
   display: flex;

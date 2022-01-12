@@ -6,21 +6,21 @@ import Group2 from '../../public/icon/Group2.svg';
 import Group3 from '../../public/icon/Group3.svg';
 
 const Setion = styled.div`
-  height: ${({isMobile})=>isMobile?'100%':'1000px'};
+  height: ${({isMobile})=>isMobile?'100%':'776px'};
   color: ${({theme})=> theme.colors.font};
   background:  #0F1131;
-  padding: ${({isMobile})=>isMobile?'40px 20px':'100px 16% 0 16%'};
+  padding: ${({isMobile})=>isMobile?'40px 20px':'96px 16% 0 16%'};
   position: relative;
   z-index: 2;
   &>.top_img {
     position: absolute;
     width: ${({isMobile})=>isMobile?'48px':'78px'};
     top:0;
-    left: 62%;
+    left: 62.9%;
   }
 `
 const SetionFlex = styled.div`
-  margin-top: ${({isMobile})=>isMobile?'50px':'113px'};
+  margin-top: ${({isMobile})=>isMobile?'50px':'72px'};
   ${({isMobile})=>!isMobile?'display: flex;align-items: center;justify-content: space-between;':''}
 `
 
@@ -32,8 +32,8 @@ const SetionFlexItem = styled.div`
   @media (max-width: 1520px) and (min-width:1025px){
     width: calc((68vw - 40px) /3);
   }
-  height: ${({isMobile})=>isMobile?'100%':'480px'};
-  padding: 48px 32px;
+  height: ${({isMobile})=>isMobile?'100%':'440px'};
+  padding: 64px 32px;
   ${({isMobile})=>isMobile?'margin-bottom: 20px;':''}
   &>.top_img {
     display: flex;
@@ -91,7 +91,7 @@ const SetionOne = ({isMobile}) => {
   return (
     <Setion id="Features"  isMobile={isMobile}>
       <img className='top_img' src={WhiteMatteImg} alt=''/>
-      <DivTitle tit="Key Features" isTit={true} line={true} bottom={15}/>
+      <DivTitle tit="Key Features" isTit={true} />
       <SetionFlex isMobile={isMobile}>
         {flexArr.map((item,index)=>{
           return <SetionItem isMobile={isMobile} key={index} title={item.title} content={item.content} icon={item.icon}/>

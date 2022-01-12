@@ -4,13 +4,13 @@ import Group4 from '../../public/icon/Group4.svg';
 import Group5 from '../../public/icon/Group5.svg';
 
 const Setion = styled.div`
-  height:  ${({isMobile})=>isMobile?'100%':'650px'};
+  height:  ${({isMobile})=>isMobile?'100%':'496px'};
   color: ${({theme})=> theme.colors.font};
   background:  #080821;
-  padding: ${({isMobile})=>isMobile?'40px 20px':'100px 16% 0 16%'};
+  padding: ${({isMobile})=>isMobile?'40px 20px':'96px 16% 0 16%'};
 `
 const SetionFlex = styled.div`
-  margin-top: ${({isMobile})=>isMobile?'50px':'113px'};
+  margin-top: ${({isMobile})=>isMobile?'50px':'72px'};
   ${({isMobile})=>!isMobile?'display: flex;align-items: center;justify-content: space-between;':''}
 `
 
@@ -21,6 +21,7 @@ const SetionFlexItem = styled.div`
   }
   ${({isMobile})=>isMobile?'margin-bottom: 40px;':''}
   display: flex;
+  align-items: center;
   &>.top_img {
     display: flex;
     align-items: center;
@@ -35,10 +36,10 @@ const SetionFlexItem = styled.div`
       font-family: Poppins-Bold;
       font-style: normal;
       font-weight: bold;
-      font-size: ${({isMobile})=>isMobile?'20px':'36px'};
+      font-size: ${({isMobile})=>isMobile?'20px':'24px'};
       line-height: 150%;
       color: #72E2FF;
-      margin-bottom: 8px;
+      margin-bottom: 16px;
     }
     &>.content {
       font-family: Poppins;
@@ -78,7 +79,7 @@ const SetionItem = ({title,content,icon,isMobile}) => {
 const SetionThree = ({isMobile}) => {
   return (
     <Setion id="Tokenomics"  isMobile={isMobile}>
-      <DivTitle tit="Tokenomics" isTit={true} line={true} bottom={15}/>
+      <DivTitle tit="Tokenomics" isTit={true} />
       <SetionFlex isMobile={isMobile}>
         {flexArr.map((item,index)=>{
           return <SetionItem isMobile={isMobile} key={index} title={item.title} content={item.content} icon={item.icon}/>
