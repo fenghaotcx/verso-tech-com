@@ -32,8 +32,11 @@ const SetionFlexItem = styled.div`
   box-sizing: border-box;
   border-radius: 32px;
   width: ${({isMobile})=>isMobile?'100%':'calc((62vw - 120px) /3)'};
-  @media (max-width: 1520px) and (min-width:1025px){
+  @media (max-width: 1680px) and (min-width:1420px){
     width: calc((68vw - 40px) /3);
+  }
+  @media (max-width: 1420px) and (min-width:1025px){
+    width: calc((70vw - 40px) /3);
   }
   height: ${({isMobile})=>isMobile?'100%':'440px'};
   padding: 64px 32px;
@@ -49,6 +52,12 @@ const SetionFlexItem = styled.div`
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
+    @media (max-width: 1680px) and (min-width:1420px){
+      font-size: 20px;
+    }
+    @media (max-width: 1420px) and (min-width:1025px){
+      font-size: 18px;
+    }
     line-height: 150%;
     color: #72E2FF;
     margin-bottom: 24px;
@@ -58,6 +67,12 @@ const SetionFlexItem = styled.div`
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
+    @media (max-width: 1680px) and (min-width:1420px){
+      font-size: 16px;
+    }
+    @media (max-width: 1420px) and (min-width:1025px){
+      font-size: 14px;
+    }
     line-height: 150%;
   }
 `
