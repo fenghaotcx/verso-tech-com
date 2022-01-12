@@ -7,7 +7,10 @@ const Setion = styled.div`
   height: ${({isMobile})=>isMobile?'100%':'1339px'};
   color: ${({theme})=> theme.colors.font};
   background:  #0F1131;
-  padding: ${({isMobile})=>isMobile?'40px 0px':'96px 16% 0 16%'};
+  padding: ${({isMobile})=>isMobile?'40px 0px':'96px 18.75% 0 18.75%'};
+  @media (max-width: 1820px) and (min-width:1025px){
+    padding: 96px 16% 0 16%;
+  }
   position: relative;
   z-index: 2;
   &>.glossy {

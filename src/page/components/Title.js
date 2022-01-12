@@ -32,7 +32,10 @@ const TopBar = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 16%;
+  padding: 0 18.75%;
+  @media (max-width: 1820px) and (min-width:1025px){
+    padding: 0 16%;
+  }
 `
 
 const Nav = styled.div`

@@ -8,7 +8,10 @@ const Setion = styled.div`
   height: ${({isMobile})=>isMobile?'100%':'778px'};
   color: ${({theme})=> theme.colors.font};
   background: #080821;
-  padding: ${({isMobile})=>isMobile?'40px 20px':'120px 16% 0 16%'};
+  padding: ${({isMobile})=>isMobile?'40px 20px':'120px 18.75% 0 18.75%'};
+  @media (max-width: 1820px) and (min-width:1025px){
+    padding: 120px 16% 0 16%;
+  }
   position: relative;
   z-index: 2;
   &>.left {

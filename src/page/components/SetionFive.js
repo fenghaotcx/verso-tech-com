@@ -14,7 +14,10 @@ const Setion = styled.div`
   height: ${({isMobile})=>isMobile?'100%':'576px'};
   color: ${({theme})=> theme.colors.font};
   background:  #080821;
-  padding: ${({isMobile})=>isMobile?'40px':'96px 16% 0 16%'};
+  padding: ${({isMobile})=>isMobile?'40px':'96px 18.75% 0 18.75%'};
+  @media (max-width: 1820px) and (min-width:1025px){
+    padding: 96px 16% 0 16%;
+  }
 `
 const SetionFlex = styled.div`
   margin-top: ${({isMobile})=>isMobile?'50px':'72px'};
