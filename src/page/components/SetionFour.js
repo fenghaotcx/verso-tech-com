@@ -41,7 +41,7 @@ const Step = styled.div`
   width: 32px;
   height: 32px;
   background: rgba(48, 79, 253, 0.8);
-  box-shadow: 0px 0px 16px 2px #304FFD;
+  box-shadow: 0px 0px 12px 2px rgba(48, 79, 253, 0.5);
   border-radius: 100%;
   margin: 0 auto;
   display: flex;
@@ -51,7 +51,7 @@ const Step = styled.div`
   &>.step {
     width: 16px;
     height: 16px;
-    background: #3F8CFF;
+    background: #72E2FF;
     border-radius: 100%;
   }
 `
