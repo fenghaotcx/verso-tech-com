@@ -1,13 +1,17 @@
 import styled from 'styled-components';
 import DivTitle from './DivTitle';
 import WhiteGlossy from '../../public/icon/White-Glossy.svg';
+import WhiteGlossyM from '../../public/icon/White-GlossyM.svg';
 import Ellipse from '../../public/icon/Ellipse.svg';
+import EllipseR from '../../public/icon/EllipseR.svg';
+
+
 
 const Setion = styled.div`
   height: ${({isMobile})=>isMobile?'100%':'1339px'};
   color: ${({theme})=> theme.colors.font};
   background:  #0F1131;
-  padding: ${({isMobile})=>isMobile?'40px 0px':'96px 18.75% 0 18.75%'};
+  padding: ${({isMobile})=>isMobile?'40px 16px':'96px 18.75% 0 18.75%'};
   @media (max-width: 1820px) and (min-width:1025px){
     padding: 96px 16% 0 16%;
   }
@@ -15,21 +19,21 @@ const Setion = styled.div`
   z-index: 2;
   &>.glossy {
     position: absolute;
-    width: ${({isMobile})=>isMobile?'90px':'197px'};
+    width: ${({isMobile})=>isMobile?'110px':'197px'};
     top: 0;
-    right: ${({isMobile})=>isMobile?'10%':'20.4%'};
+    right: ${({isMobile})=>isMobile?'12.8%':'20.4%'};
     z-index: 1;
   }
   &>.ellipse {
     position: absolute;
-    height: ${({isMobile})=>isMobile?'493px':'993px'};
-    top:  ${({isMobile})=>isMobile?'60px':'234px'};
-    left: 0px;
+    height: ${({isMobile})=>isMobile?'528px':'993px'};
+    ${({isMobile})=>isMobile?'bottom: 125px;':'top: 234px;'}
+    ${({isMobile})=>isMobile?'right: 0px;':'left: 0px;'}
     z-index: 1;
   }
 `
 const SetionFlex = styled.div`
-  margin: ${({isMobile})=>isMobile?'50px':'74px'} auto 0;
+  margin: ${({isMobile})=>isMobile?'54px':'74px'} auto 0;
   width: ${({isMobile})=>isMobile?'100%':'100%'};
 `
 
@@ -67,7 +71,7 @@ const Content = styled.div`
   position: absolute;
   z-index: 9;
   top: 0;
-  ${({index,isMobile})=> index ?`right: ${isMobile?'40px':'58px'};text-align: right;`:`left: ${isMobile?'40px':'58px'};`}}
+  ${({index,isMobile})=> index && !isMobile?`right: ${isMobile?'40px':'58px'};text-align: right;`:`left: ${isMobile?'40px':'58px'};`}}
   width: ${({isMobile})=>isMobile?'calc(100vw/2 - 30px)':'380px'};
   &>.tit {
     font-family: Poppins-Bold;
@@ -133,8 +137,8 @@ const SetionItem = ({title,content,index,height,isMobile}) => {
 const SetionFour = ({isMobile}) => {
   return (
     <Setion id="Roadmap" isMobile={isMobile}>
-      <img className='glossy' src={WhiteGlossy}  alt=''/>
-      <img className='ellipse' src={Ellipse}  alt=''/>
+      <img className='glossy' src={isMobile?WhiteGlossyM:WhiteGlossy}  alt=''/>
+      <img className='ellipse' src={isMobile?EllipseR:Ellipse}  alt=''/>
       <DivTitle tit="Roadmap" isTit={true} />
       <SetionFlex isMobile={isMobile}>
         {flexArr.map((item,index)=>{
