@@ -14,13 +14,13 @@ const Setion = styled.div`
   height: ${({isMobile})=>isMobile?'100%':'576px'};
   color: ${({theme})=> theme.colors.font};
   background:  #080821;
-  padding: ${({isMobile})=>isMobile?'40px':'96px 18.75% 0 18.75%'};
+  padding: ${({isMobile})=>isMobile?'40px 16px':'96px 18.75% 0 18.75%'};
   @media (max-width: 1820px) and (min-width:1025px){
     padding: 96px 16% 0 16%;
   }
 `
 const SetionFlex = styled.div`
-  margin-top: ${({isMobile})=>isMobile?'50px':'72px'};
+  margin-top: ${({isMobile})=>isMobile?'32px':'72px'};
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -33,39 +33,33 @@ const SetionFlexItem = styled.a`
   background: #0F1131;
   border: 1px solid #304FFD;
   box-sizing: border-box;
-  border-radius: 24px;
-  width: ${({isMobile})=>isMobile?'calc((100vw - 100px) /2)':'calc((62vw - 240px) /4)'};
-  ${({isMobile})=>isMobile?'margin-bottom: 20px;padding-bottom:20px;':''}
+  border-radius: ${({isMobile})=>isMobile?'16px':'24px'};
+  width: ${({isMobile})=>isMobile?'calc((100vw - 45px) /2)':'calc((62vw - 240px) /4)'};
+  ${({isMobile,index})=>isMobile?`${!index?'margin-bottom: 12px;':''} padding-bottom:38px;`:''}
   @media (max-width: 1680px) and (min-width:1025px){
     width: calc((68vw - 120px) /4);
   }
-  &:hover .right {
+  ${({isMobile})=>!isMobile? `&:hover .right {
+    color: #fff;
+  }`:''}
+  ${({isMobile})=>!isMobile? `&:hover {
     border: 1px solid #fff;
-    color: #0F1131;
-    background: #fff;
-  }
-  &:hover {
-    border: 1px solid #fff;
-  }
+  }`:''}
   &>.top_img {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: ${({isMobile})=>isMobile?'22px':'54px'} auto 32px;
+    margin: ${({isMobile})=>isMobile?'44px auto 14px':'66.5px auto 24px'};
     &>img {
-      width: 80px;
+      width:  ${({isMobile})=>isMobile?'48px':'64px'};
     }
   }
   &>.right {
-    width: ${({isMobile})=>isMobile?'70%':'50%'};
-    height: 43px;
-    line-height: 43px;
-    border: 1px solid #9193AF;
+    line-height: 150%;
     box-sizing: border-box;
-    border-radius: 100px;
-    font-family: Source Han Sans CN;
+    font-family: Poppins;
     font-weight: bold;
-    font-size: 18px;
+    font-size: ${({isMobile})=>isMobile?'14px':'18px'};
     color: #9193AF;
     text-align: center;
     margin: 0 auto;
@@ -100,11 +94,11 @@ const flexArr = [
   
 ]
 
-const SetionItem = ({title,link,icon,acticon,isMobile}) => {
+const SetionItem = ({title,link,icon,acticon,isMobile,index}) => {
   const [checked, setChecked] = useState(false);
   return (
-    <SetionFlexItem isMobile={isMobile} href={link} rel="noreferrer" target="_blank" onMouseEnter={()=> setChecked(true)} onMouseLeave={()=> setChecked(false)}>
-      <div className='top_img'>{checked?acticon:icon}</div>
+    <SetionFlexItem index={index} isMobile={isMobile} href={link} rel="noreferrer" target="_blank" onMouseEnter={()=> setChecked(true)} onMouseLeave={()=> setChecked(false)}>
+      <div className='top_img'>{checked && !isMobile?acticon:icon}</div>
       <div className='right'>{title}</div>
     </SetionFlexItem>
   )
@@ -116,7 +110,7 @@ const SetionThree = ({isMobile}) => {
       <DivTitle tit="Community" isTit={true}/>
       <SetionFlex isMobile={isMobile}>
         {flexArr.map((item,index)=>{
-          return <SetionItem isMobile={isMobile} key={index} title={item.title} acticon={item.acticon} link={item.link} icon={item.icon}/>
+          return <SetionItem index={index>=2} isMobile={isMobile} key={index} title={item.title} acticon={item.acticon} link={item.link} icon={item.icon}/>
         })}
       </SetionFlex>
     </Setion>

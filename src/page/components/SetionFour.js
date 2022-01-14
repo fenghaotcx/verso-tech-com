@@ -38,23 +38,23 @@ const SetionFlex = styled.div`
 `
 
 const SetionFlexItem = styled.div`
-  margin: 0 auto;
+  margin: ${({isMobile})=>isMobile?'0 0 0 29px':'0 auto'};
 `
 
 const Step = styled.div`
-  width: 32px;
-  height: 32px;
+  width: ${({isMobile})=>isMobile?'24px':'32px'};
+  height: ${({isMobile})=>isMobile?'24px':'32px'};
   background: rgba(48, 79, 253, 0.8);
   box-shadow: 0px 0px 12px 2px rgba(48, 79, 253, 0.5);
   border-radius: 100%;
-  margin: 0 auto;
+  margin: ${({isMobile})=>isMobile?'0':'0 auto'};
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   &>.step {
-    width: 16px;
-    height: 16px;
+    width: ${({isMobile})=>isMobile?'12px':'16px'};
+    height: ${({isMobile})=>isMobile?'12px':'16px'};;
     background: #72E2FF;
     border-radius: 100%;
   }
@@ -62,8 +62,8 @@ const Step = styled.div`
 
 const Line =  styled.div`
   width: 4px;
-  height: ${({height,isMobile})=> isMobile?height-20+'px':height+'px'};
-  margin: 0 auto;
+  height: ${({height,isMobile})=> isMobile?height[1]+'px':height[0]+'px'};
+  margin: ${({isMobile})=>isMobile?'0 0 0 10px':'0 auto'};
   background: linear-gradient(180deg, rgba(48, 79, 253, 0) 0%, #3049FD 16.33%, #304FFD 85.93%, rgba(48, 79, 253, 0) 100%);
 `
 
@@ -71,19 +71,19 @@ const Content = styled.div`
   position: absolute;
   z-index: 9;
   top: 0;
-  ${({index,isMobile})=> index && !isMobile?`right: ${isMobile?'40px':'58px'};text-align: right;`:`left: ${isMobile?'40px':'58px'};`}}
-  width: ${({isMobile})=>isMobile?'calc(100vw/2 - 30px)':'380px'};
+  ${({index,isMobile})=> index && !isMobile?`right: ${isMobile?'48px':'56px'};text-align: right;`:`left: ${isMobile?'48px':'56px'};`}}
+  width: ${({isMobile})=>isMobile?'calc(100vw - 120px)':'380px'};
   &>.tit {
     font-family: Poppins-Bold;
     font-weight: bold;
-    font-size: ${({isMobile})=>isMobile?'18px':'24px'};
+    font-size: ${({isMobile})=>isMobile?'20px':'24px'};
     line-height: 150%;
     color: #72E2FF;
     margin-bottom: ${({isMobile})=>isMobile?'8px':'16px'};
   }
   &>.content {
     font-family: Poppins;
-    font-size: ${({isMobile})=>isMobile?'13px':'18px'};
+    font-size: ${({isMobile})=>isMobile?'14px':'18px'};
     line-height: 150%;
   }
 `
@@ -92,27 +92,27 @@ const flexArr = [
   {
     title:'2022 Q1',
     content: <p>Pavo Project 1.0 Launch<br />Dashboard Feature<br />Autofarm Feature<br />28-Day Lock Pool<br />Swap<br />Token IDO<br />Add LP Pools</p>,
-    height: '275'
+    height: [257,201],
   },
   {
     title:'2022 Q2',
     content: <p>Fully Responsive to Mobile<br />Treasury Feature<br />Support Solana Blockchain<br />Source Code Auditing<br />Token Repurchase and Burn</p>,
-    height: '203'
+    height: [203,159],
   },
   {
     title:'2022 Q3',
     content: <p>List $Pavo on Exchanges<br />NFT Collaborations<br />Add in NFT Staking<br />DAO Governance<br />Integrate with More Projects</p>,
-    height: '203'
+    height: [203,159],
   },
   {
     title:'2022 Q4',
     content: <p>Continue to Improve Features<br />Improve DAO Governance<br />Integrate with More Chains<br />Integrate with Other Wallet DApps</p>,
-    height: '176'
+    height: [176,138],
   },
   {
     title:'Many more to come',
     content: '',
-    height: '0'
+    height: [0,0]
   },
 ]
 
@@ -120,7 +120,7 @@ const SetionItem = ({title,content,index,height,isMobile}) => {
   return (
     <>
       <SetionFlexItem isMobile={isMobile}>
-        <Step>
+        <Step isMobile={isMobile}>
           <div className='step'></div>
           <Content isMobile={isMobile} index={index%2===0}>
             <div className='tit'>{title}</div>
