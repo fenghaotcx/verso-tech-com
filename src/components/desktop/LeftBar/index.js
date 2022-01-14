@@ -41,12 +41,14 @@ const LeftBar = () => {
       toggleDrawer(false)
       setActive(anchorName)
       const anchorElement = document.getElementById(anchorName);
+      const height = document.getElementById(anchorName).offsetTop
       if(anchorElement) {
         setTimeout(() => {
-          anchorElement.scrollIntoView(
-            {behavior: 'smooth'}
-          );
-        },200)
+          window.scroll({
+            top: height-56,
+            behavior: 'smooth',
+          });
+        },100)
       }
     }
   }
