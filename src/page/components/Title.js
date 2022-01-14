@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import {useContext} from 'react';
 import { GlobalContext } from '../../App';
-import DehazeIcon from '@mui/icons-material/Dehaze';
 import Logo from '../../components/Logo';
-// import LaunchAppBtn from '../../components/LaunchAppBtn';
 import TopNavBar from '../../components/TopNavBar';
+import MenuImg from '../../public/icon/menu.svg';
+import CloseImg from '../../public/icon/close.svg';
 
-
+// import LaunchAppBtn from '../../components/LaunchAppBtn';
 // import LoginDialog from '../../components/LoginDialog'
 
 const Tit = styled.div`
@@ -14,16 +14,16 @@ const Tit = styled.div`
   font-style: normal;
   font-weight: bold;
   font-size: ${({isMobile}) => isMobile?'22px':'40px'};
-  height: ${({isMobile}) => isMobile?'50px':'64px'};
+  height: ${({isMobile}) => isMobile?'56px':'64px'};
   color: ${({theme})=> theme.colors.font};
-  ${({isMobile}) => isMobile?'padding:10px 20px;':''}
+  ${({isMobile}) => isMobile?'padding:0 16px;':''}
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: #0F1131;
   position: sticky;
   top: 0px;
-  z-index: 99;
+  z-index: 1999;
 `
 
 const TopBar = styled.div`
@@ -46,12 +46,19 @@ const Nav = styled.div`
 const MRight = styled.div`
   display: flex;
   align-items: center;
+  &>.menu {
+    display: flex;
+    align-items: center;
+    &>img {
+      width: 32px;
+    }
+  }
 `
 
 const barArr = ['Home','Features','Tokenomics','Roadmap','Community']
 
 const Title = () => {
-  const {toggleDrawer,isMobile,theme} = useContext(GlobalContext)
+  const {toggleDrawer,isMobile,theme,isopen} = useContext(GlobalContext)
   return (
     <>
       <Tit id='tab-bar' isMobile={isMobile}> 
@@ -71,7 +78,9 @@ const Title = () => {
             <Logo theme={theme} isMobile={isMobile}/>
             <MRight>
               {/* <LaunchAppBtn isMobile={isMobile} /> */}
-              <DehazeIcon onClick={()=>{toggleDrawer(true)}} />
+              <div className='menu' onClick={()=>{toggleDrawer(!isopen)}}>
+                <img src={isopen?CloseImg:MenuImg} alt='menu'/>
+              </div>
             </MRight>
           </>
         }

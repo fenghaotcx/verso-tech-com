@@ -11,14 +11,14 @@ const Title = styled.div`
     font-family: Poppins-Bold;
     font-style: normal;
     font-weight: bold;
-    font-size: ${({isMobile})=>isMobile?'36px':'64px'};
+    font-size: ${({isMobile})=>isMobile?'32px':'64px'};
     line-height: 150%;
     z-index: 2;
     position: relative;
   }
   &>.tit.tit-small {
     // font-family: Source Han Sans CN;
-    font-size: ${({isMobile})=>isMobile?'28px':'48px'};
+    font-size: ${({isMobile})=>isMobile?'24px':'48px'};
     line-height: 150%;
   }
 `

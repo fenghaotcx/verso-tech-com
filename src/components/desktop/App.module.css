@@ -27,9 +27,9 @@
     /* opacity: 0.7; */
     text-decoration: none;
 }
-.darkLeft .navDiv {
+/* .darkLeft .navDiv {
     color: #fff;
-}
+} */
 .navDivM {
     width: 100vw;
     box-sizing: border-box;
@@ -38,6 +38,7 @@
     overflow: hidden;
 }
 .active {
+    font-family: Poppins-Bold;
     color: #fff;
     opacity: 1;
     position: relative;

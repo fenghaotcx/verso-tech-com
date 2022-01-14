@@ -7,7 +7,7 @@ const Setion = styled.div`
   height:  ${({isMobile})=>isMobile?'100%':'496px'};
   color: ${({theme})=> theme.colors.font};
   background:  #080821;
-  padding: ${({isMobile})=>isMobile?'40px 20px':'96px 18.75% 0 18.75%'};
+  padding: ${({isMobile})=>isMobile?'40px 16px':'96px 18.75% 0 18.75%'};
   @media (max-width: 1820px) and (min-width:1025px){
     padding: 96px 16% 0 16%;
   }
@@ -22,16 +22,16 @@ const SetionFlexItem = styled.div`
   @media (max-width: 1520px) and (min-width:1025px){
     width: calc((68vw - 40px) /2);
   }
-  ${({isMobile})=>isMobile?'margin-bottom: 40px;':''}
+  ${({isMobile,index})=>isMobile&&!index?'margin-bottom: 40px;':''}
   display: flex;
   align-items: center;
   &>.top_img {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: ${({isMobile})=>isMobile?'20px':'32px'};
+    margin-right: ${({isMobile})=>isMobile?'10px':'32px'};
     &>img {
-      ${({isMobile})=>isMobile?'width: 110px;':''}
+      ${({isMobile})=>isMobile?'width: 100px;':''}
     }
   }
   &>.right {
@@ -42,7 +42,7 @@ const SetionFlexItem = styled.div`
       font-size: ${({isMobile})=>isMobile?'20px':'24px'};
       line-height: 150%;
       color: #72E2FF;
-      margin-bottom: 16px;
+      margin-bottom: ${({isMobile})=>isMobile?'8px':'16px'};
     }
     &>.content {
       font-family: Poppins;
@@ -67,9 +67,9 @@ const flexArr = [
   },
 ]
 
-const SetionItem = ({title,content,icon,isMobile}) => {
+const SetionItem = ({title,content,icon,isMobile,index}) => {
   return (
-    <SetionFlexItem isMobile={isMobile}>
+    <SetionFlexItem index={index} isMobile={isMobile}>
       <div className='top_img'>{icon}</div>
       <div className='right'>
         <div className='title'>{title}</div>
@@ -85,7 +85,7 @@ const SetionThree = ({isMobile}) => {
       <DivTitle tit="Tokenomics" isTit={true} />
       <SetionFlex isMobile={isMobile}>
         {flexArr.map((item,index)=>{
-          return <SetionItem isMobile={isMobile} key={index} title={item.title} content={item.content} icon={item.icon}/>
+          return <SetionItem isMobile={isMobile} key={index} index={index === flexArr.length-1} title={item.title} content={item.content} icon={item.icon}/>
         })}
       </SetionFlex>
     </Setion>

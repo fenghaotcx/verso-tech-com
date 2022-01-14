@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import WhiteMatteImg from '../../public/icon/White-Matte.svg';
+import WhiteMatteImgM from '../../public/icon/White-MatteM.svg';
+
 import DivTitle from './DivTitle';
 import Group1 from '../../public/icon/Group1.svg';
 import Group2 from '../../public/icon/Group2.svg';
@@ -9,7 +11,7 @@ const Setion = styled.div`
   height: ${({isMobile})=>isMobile?'100%':'776px'};
   color: ${({theme})=> theme.colors.font};
   background:  #0F1131;
-  padding: ${({isMobile})=>isMobile?'40px 20px':'96px 18.75% 0 18.75% '};
+  padding: ${({isMobile})=>isMobile?'40px 16px':'96px 18.75% 0 18.75% '};
   @media (max-width: 1820px) and (min-width:1025px){
     padding: 96px 16% 0 16%;
   }
@@ -17,13 +19,13 @@ const Setion = styled.div`
   z-index: 2;
   &>.top_img {
     position: absolute;
-    width: ${({isMobile})=>isMobile?'48px':'78px'};
+    width: ${({isMobile})=>isMobile?'63px':'78px'};
     top:0;
-    left: 62.9%;
+    left: ${({isMobile})=>isMobile?'70.6%':'62.9%'};
   }
 `
 const SetionFlex = styled.div`
-  margin-top: ${({isMobile})=>isMobile?'50px':'72px'};
+  margin-top: ${({isMobile})=>isMobile?'32px':'72px'};
   ${({isMobile})=>!isMobile?'display: flex;align-items: center;justify-content: space-between;':''}
 `
 
@@ -39,34 +41,37 @@ const SetionFlexItem = styled.div`
     width: calc((70vw - 40px) /3);
   }
   height: ${({isMobile})=>isMobile?'100%':'440px'};
-  padding: 64px 32px;
+  padding: ${({isMobile})=>isMobile?'32px 24px':'64px 32px'};
   ${({isMobile})=>isMobile?'margin-bottom: 20px;':''}
   &>.top_img {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 32px;
+    margin-bottom: ${({isMobile})=>isMobile?'24px':'32px'};
+    &>img {
+      width: ${({isMobile})=>isMobile?'100px':'120px'};
+    }
   }
   &>.title {
     font-family: Poppins-Bold;
     font-style: normal;
     font-weight: bold;
-    font-size: 24px;
+    font-size: ${({isMobile})=>isMobile?'20px':'24px'};
     @media (max-width: 1680px) and (min-width:1420px){
       font-size: 20px;
     }
     @media (max-width: 1420px) and (min-width:1025px){
       font-size: 18px;
     }
-    line-height: 150%;
+    line-height: ${({isMobile})=>isMobile?'100%':'150%'};
     color: #72E2FF;
-    margin-bottom: 24px;
+    margin-bottom: ${({isMobile})=>isMobile?'8px':'24px'};
   }
   &>.content {
     font-family: Poppins;
     font-style: normal;
     font-weight: normal;
-    font-size: 18px;
+    font-size: ${({isMobile})=>isMobile?'14px':'18px'};
     @media (max-width: 1680px) and (min-width:1420px){
       font-size: 16px;
     }
@@ -108,7 +113,7 @@ const SetionItem = ({title,content,icon,isMobile}) => {
 const SetionOne = ({isMobile}) => {
   return (
     <Setion id="Features"  isMobile={isMobile}>
-      <img className='top_img' src={WhiteMatteImg} alt=''/>
+      <img className='top_img' src={isMobile?WhiteMatteImgM:WhiteMatteImg} alt=''/>
       <DivTitle tit="Key Features" isTit={true} />
       <SetionFlex isMobile={isMobile}>
         {flexArr.map((item,index)=>{
