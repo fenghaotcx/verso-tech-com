@@ -41,8 +41,8 @@ const SetionFlexItem = styled.div`
     width: calc((70vw - 40px) /3);
   }
   height: ${({isMobile})=>isMobile?'100%':'440px'};
-  padding: ${({isMobile})=>isMobile?'32px 24px':'64px 32px'};
-  ${({isMobile})=>isMobile?'margin-bottom: 20px;':''}
+  padding: ${({isMobile})=>isMobile?'42.5px 24px':'64px 32px'};
+  ${({isMobile,index})=>isMobile&&!index?'margin-bottom: 20px;':''}
   &>.top_img {
     display: flex;
     align-items: center;
@@ -100,9 +100,9 @@ const flexArr = [
   }
 ]
 
-const SetionItem = ({title,content,icon,isMobile}) => {
+const SetionItem = ({title,content,icon,isMobile,index}) => {
   return (
-    <SetionFlexItem isMobile={isMobile}>
+    <SetionFlexItem index={index} isMobile={isMobile}>
       <div className='top_img'>{icon}</div>
       <div className='title'>{title}</div>
       <div  className='content'>{content}</div>
@@ -117,7 +117,7 @@ const SetionOne = ({isMobile}) => {
       <DivTitle tit="Key Features" isTit={true} />
       <SetionFlex isMobile={isMobile}>
         {flexArr.map((item,index)=>{
-          return <SetionItem isMobile={isMobile} key={index} title={item.title} content={item.content} icon={item.icon}/>
+          return <SetionItem isMobile={isMobile} index={index === flexArr.length-1} key={index} title={item.title} content={item.content} icon={item.icon}/>
         })}
       </SetionFlex>
     </Setion>
