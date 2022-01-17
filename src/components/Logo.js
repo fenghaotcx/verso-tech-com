@@ -1,6 +1,5 @@
-import styled from 'styled-components'
-import logoImg from '../public/icon/Logo.svg'
-import PAVOImg from '../public/icon/PAVO.svg'
+import styled from 'styled-components';
+import PAVOImg from '../public/icon/logo_pavo.svg';
 
 const LogoDiv = styled.div`
   font-size: 24px;
@@ -9,17 +8,12 @@ const LogoDiv = styled.div`
   align-items: center;
   color: ${({theme})=> theme.colors.font};
   &>.logo {
-    width: 40px;
-    margin-right: 4px;
-  }
-  &>.pavo {
-    width: 64px;
+    width: ${({isMobile})=> isMobile?'97px':'110px'};
   }
 `
 
 const Logo = ({isMobile}) => <LogoDiv isMobile={isMobile}>
-  <img className='logo' src = {logoImg} alt = "PAVO" />
-  <img className='pavo' src={PAVOImg} alt="PAVO" />
+  <img className='logo' src={PAVOImg} alt="PAVO" />
   </LogoDiv>
 
 
