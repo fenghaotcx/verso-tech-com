@@ -13,8 +13,7 @@ const LogoDiv = styled.div`
     margin-right: 4px;
   }
   &>.pavo {
-    width: 63px;
-    height: 36px;
+    width: 64px;
   }
 `
 
