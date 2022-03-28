@@ -90,23 +90,23 @@ const Content = styled.div`
 
 const flexArr = [
   {
-    title:'2022 Q1',
-    content: <p>Pavo Project 1.0 Launch<br />Dashboard Feature<br />Autofarm Feature<br />28-Day Lock Pool<br />Swap<br />Token IDO<br />Add LP Pools</p>,
+    title:'2022 Q2',
+    content: <p>Official Website launch<br />Pavo Project Beta Launch<br />Token IDO<br />Source Code Audit Submission<br />Initial marketing (promotions, AMA and community)</p>,
     height: [257,201],
   },
   {
-    title:'2022 Q2',
-    content: <p>Fully Responsive to Mobile<br />Treasury Feature<br />Support Solana Blockchain<br />Source Code Auditing<br />Token Repurchase and Burn</p>,
-    height: [203,159],
-  },
-  {
     title:'2022 Q3',
-    content: <p>List $Pavo on Exchanges<br />NFT Collaborations<br />Add in NFT Staking<br />DAO Governance<br />Integrate with More Projects</p>,
+    content: <p>Fully Responsive to Mobile<br />Single Asset Zapping & Staking<br />Partnerships with other Terra projects<br />Source Code Audit Complete</p>,
     height: [203,159],
   },
   {
     title:'2022 Q4',
-    content: <p>Continue to Improve Features<br />Improve DAO Governance<br />Integrate with More Chains<br />Integrate with Other Wallet DApps</p>,
+    content: <p>Support Other Blockchains<br />List $Pavo on Exchanges<br />DAO Governance<br />Integrate with Other dApps<br />Additional Code Audit Complete</p>,
+    height: [203,159],
+  },
+  {
+    title:'2023 Q1',
+    content: <p>Integration with Mobile Wallet<br />NFT Collaboration<br />NFT Staking Feature<br />Improve DAO Governance</p>,
     height: [176,138],
   },
   {
